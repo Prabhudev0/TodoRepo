@@ -1,0 +1,28 @@
+
+<div>   
+    <table class="table">
+       
+         <thead>
+            <tr>
+               <th >Name</th>
+               <th >Adress</th>
+               <th >Mobile number</th>
+               <th *ngIf="username" >Actions</th>
+            </tr>
+         </thead>
+    
+          <tbody>
+               <tr *ngFor="let member of members">
+                  <td >{{member.name}}</td>
+                  <td>{{member.adress}}</td>
+                  <td>{{member.mobileNumber}}</td>
+                  <button *ngIf="username" (click)="update(member.id)" class="btn btn-success">Update</button>
+                  <button *ngIf="username" (click)="delete(member.id)" class="btn btn-warning">Delete</button>
+               </tr>
+          </tbody>
+    </table>
+    </div>
+    
+    <div class="add-btn"> 
+       <button *ngIf="username" (click)="save(0)"> Add </button>
+    </div>
